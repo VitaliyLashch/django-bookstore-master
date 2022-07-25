@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+{%include 'head.html'%}
+
+
+<body>
+<!--wrapper start-->
+<div class="wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <div class="dog-head"></div>
+      <div class="dog-body"></div>
+    </div>
+  </div>
+  <!--== End Preloader Content ==-->
+
+  <!--== Start Header Wrapper ==-->
+{%include 'header_area.html'%}
+  <!--== End Header Wrapper ==-->
+
+  <main class="main-content">
+    <!--== Start Hero Area Wrapper ==-->
+    <section class="home-slider-area">
+      <div class="swiper home-slider-container default-slider-container">
+        <div class="swiper-wrapper home-slider-wrapper slider-default">
+          <div class="swiper-slide">
+            <div class="slider-content-area" data-bg-img="{% static 'assets/img/slider/slider-bg.webp' %}">
+              <div class="container">
+                <div class="slider-container">
+                  <div class="row justify-content-between align-items-center">
+                    <div class="col-sm-6 col-md-6">
+                      <div class="slider-content">
+                        <div class="content">
+                          <div class="title-box">
+                            <h2 class="title"></h2>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                      <div class="slider-thumb mousemove">
+                        <div class="thumb">
+                          <img src="{% static 'assets/img/slider/slider-01.webp'%}" width="585" height="579" alt="Image-HasTech">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--== Add Swiper Arrows ==-->
+        <div class="swiper-btn-wrap">
+          <div class="swiper-btn-prev">
+            <i class="pe-7s-angle-left"></i>
+          </div>
+          <div class="swiper-btn-next">
+            <i class="pe-7s-angle-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Hero Area Wrapper ==-->
+
+    <!--== End Product Area Wrapper ==-->
+
+    <!--== Start About Area Wrapper ==-->
+    <section class="about-area">
+      <div class="container">
+        <div class="about-item position-relative">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <div class="about-content">
+                <div class="section-title shape-left">
+                  <h5 class="sub-title">Найбільш переглядаюча на сайті</h5>
+                  <h2 class="title">Неоголошена війна</h2>
+                </div>
+                <p> Згадати все. День за днем. Уже більш як п'ять сотень діб. Крім власне хронології бойових дій, ви зможете прочитати аналітику, яка допоможе отримати розуміння і хоч трохи позбутися страху. І репортажі. Тих журналістів, які на власні очі бачили кров і сльози. На момент написання цього тексту неоголошена війна триває. Мала надія, що до моменту друку книжки вона таки завершиться. Але будемо сподіватися... • «Руська вєсна» — масові заворушення на сході. • АТО. Квітень-серпень 2014. Перші успіхи української армії. • Іловайський котел. Мінські домовленості — 1. Історія захисту Донецького аеропорту. • Війна і Мінськ. Міжнародні аспекти війни. Крихке перемир'я.
+                </p>
+                <a class="btn-theme" href="single_product/2">Переглянути</a>
+              </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+              <div class="about-thumb">
+                <img src="{% static 'assets/img/about/1.webp'%}" width="569" height="577" alt="Image-HasTech">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End About Area Wrapper ==-->
+
+    <!--== Start Blog Area Wrapper ==-->
+
+    </section>
+    <!--== End Blog Area Wrapper ==-->
+  </main>
+
+{%include 'footer.html'%}
+</div>
+{% include 'include_script.html'%}
+</body>
+</html>

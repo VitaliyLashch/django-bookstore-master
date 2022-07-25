@@ -1,0 +1,131 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+
+{%include 'head.html'%}
+<body>
+
+<!--wrapper start-->
+<div class="wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <div class="dog-head"></div>
+      <div class="dog-body"></div>
+    </div>
+  </div>
+  <!--== End Preloader Content ==-->
+
+  <!--== Start Header Wrapper ==-->
+{%include 'header_area.html'%}  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+{% include 'page_header_area.html' %}     <!--== End Page Header Area Wrapper ==-->
+
+    <!--== Start Contact Area Wrapper ==-->
+    <section class="contact-area contact-inner-area">
+      <div class="container">
+        <div class="row contact-page-wrapper">
+          <div class="col-xl-5">
+            <h4 class="contact-page-title">Ми поряд ! <br> Звя'жіться з нами.</h4>
+            <div class="contact-info-wrap">
+              <div class="contact-info">
+                <div class="row">
+                  <div class="col-12 col-lg-6 col-xl-12">
+                    <div class="info-item">
+                      <div class="icon">
+                        <img src="{% static 'assets/img/icons/c1.webp'%}" alt="Image-HasTech">
+                      </div>
+                      <div class="info">
+                        <h5 class="title">Адрес:</h5>
+                        <p>м. Київ; вул. Квітнева 156.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 col-xl-12">
+                    <div class="info-item">
+                      <div class="icon">
+                        <img src="{% static 'assets/img/icons/c2.webp'%}" alt="Image-HasTech">
+                      </div>
+                      <div class="info">
+                        <h5 class="title">Телефон:</h5>
+                        <p>
+                          <a href="tel://+00123456789">+380966698832</a><br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 col-xl-12">
+                    <div class="info-item">
+                      <div class="icon">
+                        <img src="{% static 'assets/img/icons/c3.webp'%}" alt="Image-HasTech">
+                      </div>
+                      <div class="info">
+                        <h5 class="title">Елетронна пошта</h5>
+                        <p>
+                          <a href="mailto://demo@example.com">kostenkosasha@gmail.com</a><br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-7">
+            <h4 class="contact-page-title page-title-style2">Напишіть лист</h4>
+            <div class="contact-form-wrap">
+              <!--== Start Contact Form ==-->
+              <div class="contact-form">
+                <form id="contact-form" action="https://whizthemes.com/mail-php/raju/arden/mail.php" method="POST">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="con_name" placeholder="Name *">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control" type="email" name="con_email" placeholder="Email *">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Subject (Optinal)">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group mb--0">
+                        <textarea class="form-control" name="con_message" placeholder="Message"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group mb--0">
+                        <button class="btn-theme" type="submit">Відправити</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!--== End Contact Form ==-->
+
+              <!--== Message Notification ==-->
+              <div class="form-message"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Contact Area Wrapper ==-->
+  </main>
+
+    {%include 'footer.html'%}
+</div>
+<!--=======================Javascript============================-->
+{% include 'include_script.html'%}
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if is_comment_allowed %}
+<div class="collapse-body">
+
+            	<div class="col-12">
+		<h3>Залиште відгук</h3>
+		<div></div>
+
+
+	</div>
+
+</div>
+		<form class="w-50" method="post">
+			{% csrf_token %}
+			{% comment %} <input type="hidden" name="book_pk" value="{{ book.pk }}"> {% endcomment %}
+			<label for="stars_count">Оцініть книгу</label>
+			<select id="stars_count" name="score">
+				<option value="1">★☆☆☆☆</option>
+				<option value="2">★★☆☆☆</option>
+				<option value="3">★★★☆☆</option>
+				<option value="4">★★★★☆</option>
+				<option value="5">★★★★★</option>
+			</select>
+			<input type="text" class="form-control my-2" id="title" name="title" placeholder="Заголовок">
+			<textarea class="form-control my-2" id="review" name="content" placeholder="Текст відгуку"></textarea>
+			<button type="submit" class="btn btn-primary my-2">Зберегти відгук</button>
+		</form>
+{% endif %}
+	<div class="col-12">
+		<h3>Відгуки:</h3>
+		<div></div>
+
+
+	</div>
+
+{% for review in book.comments.all %}
+<div class="row mt-3 border-bottom">
+	<div class="col-3">
+		<p class="text-primary">
+			{% if review.score < 0.5 %}
+			☆☆☆☆☆
+			{% elif review.score >= 0.5 and review.score < 1.5 %}
+			★☆☆☆☆
+			{% elif review.score >= 1.5 and review.score < 2.5 %}
+			★★☆☆☆
+			{% elif review.score >= 2.5 and review.score < 3.5 %}
+			★★★☆☆
+			{% elif review.score >= 3.5 and review.score < 4.5 %}
+			★★★★☆
+			{% else %}
+			★★★★★
+			{% endif %}
+		</p>
+		<p>{{ review.author.first_name }} {{ review.author.last_name }}</p>
+	</div>
+	<div class="col-9">
+		<h5>{{ review.title }}</h5>
+		<p>{{ review.content }}</p>
+	</div>
+</div>
+{% empty %}
+<div class="row">
+	<p>Книга немає відгуків</p>
+</div>
+{% endfor %}
+
+</div>
+</body>
+</html>

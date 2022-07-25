@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+{%include 'head.html'%}
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <div class="dog-head"></div>
+      <div class="dog-body"></div>
+    </div>
+  </div>
+  <!--== End Preloader Content ==-->
+
+  <!--== Start Header Wrapper ==-->
+{%include 'header_area.html'%}  <!--== End Header Wrapper ==-->
+
+  <main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+{% include 'page_header_area.html' %}    <!--== End Page Header Area Wrapper ==-->
+<div class="row mb-4">
+	<form method="get" class="w-75 mx-auto">
+		<div class="input-group">
+			<div class="input-group-prepend d-none d-md-block">
+				<span class="input-group-text">Ковальництво</span>
+			</div>
+			<input class="form-control" type="text" placeholder="Найти книгу..." name="query" value="{{ form.query.data }}">
+			<input type="hidden" name="sort" value="relevance">
+			<input type="hidden" name="maxprice" value="99999">
+			<input type="hidden" name="category" value="">
+			<span class="input-group-append">
+				<button class="btn btn-success" type="submit">Знайти</button>
+			</span>
+		</div>
+	</form>
+</div>
+<div class="row my-3">
+	<div class="col-md-3 mb-3">
+		<form method="get" class="rounded border p-3">
+			<input type="hidden" name="query" value="{{ form.query.data }}">
+			<div class="form-group">
+				<label for="max_price" class="font-weight-bold">Ціна до:</label>
+				<input class="form-control form-control-sm" type="number" id="upper_price" name="maxprice" min="100" max="99999" value="{{ form.maxprice.data }}"
+					placeholder="В рублях">
+			</div>
+			<div class="form-group">
+				<label for="genre" class="font-weight-bold">Категорія книги:</label>
+				<select class="custom-select" id="genre" name="category">
+					<option value="">Будь-яка категорія</option>
+{% for pk, name in form.category.field.choices %}
+					<option value="{{ pk }}"{% if form.data.category == pk|stringformat:'s' %} selected{% endif %}>{{ name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<button class="btn btn-block">Применить</button>
+		</form>
+	</div>
+
+</div>
+    <!--== Start Product Area Wrapper ==-->
+    <section class="product-area">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-12">
+            <div class="shop-top-bar">
+
+              <div class="shop-top-center">
+                <nav class="product-nav">
+                  <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                                        <button class="nav-link" id="nav-list-tab" data-bs-toggle="tab" data-bs-target="#nav-list" type="button" role="tab" aria-controls="nav-list" aria-selected="false"><i class="fa fa-list"></i></button>
+
+                    <button class="nav-link active" id="nav-grid-tab" data-bs-toggle="tab" data-bs-target="#nav-grid" type="button" role="tab" aria-controls="nav-grid" aria-selected="true"><i class="fa fa-th"></i></button>
+                    <button class="nav-link" id="nav-grid2-tab" data-bs-toggle="tab" data-bs-target="#nav-grid2" type="button" role="tab" aria-controls="nav-grid2" aria-selected="false"><i class="fa fa-th-large"></i></button>
+                  </div>
+                </nav>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
+                    <div class="row">
+                      {%for book in books%}
+                      <div class="col-12">
+                        <!--== Start Product Item ==-->
+                        <div class="product-item product-list-item">
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="product-thumb">
+                                <a href="single_product/{{book.id}}">
+                                  <img src="media/{{book.photo}}" width="420" height="320" alt="Image-HasTech">
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col-lg-8">
+                              <div class="product-info">
+                                <h4 class="title"><a href="single_product/{{book.id}}">{{book.name}}</a></h4>
+                                <div class="prices">
+                                  <span class="price">{{book.price}} Грн.</span>
+                                </div>
+                                <p class="desc">{{book.description}}</p>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--== End prPduct Item ==-->
+                      </div>
+                      {%endfor%}
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade show active" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
+                    <div class="row">
+                      {%for book in books%}
+                      <div class="col-sm-6 col-xl-4">
+                        <!--== Start Product Item ==-->
+                        <div class="product-item">
+                          <div class="product-thumb">
+                            <a href="single_product/{{book.id}}">
+                              <img src="media/{{book.photo}}" width="270" height="320" alt="Image-HasTech">
+                            </a>
+                          </div>
+                          <div class="product-info">
+                            <h4 class="title"><a href="single_product/{{book.id}}">{{book.name}}</a></h4>
+                            <div class="prices">
+                              <span class="price">{{book.price}} Грн.</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!--== End prPduct Item ==-->
+                      </div>
+                      {%endfor%}
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav-grid2" role="tabpanel" aria-labelledby="nav-grid2-tab">
+                    <div class="row">
+                      {%for book in books%}
+                      <div class="col-sm-6 col-xl-6">
+                        <!--== Start Product Item ==-->
+                        <div class="product-item">
+                          <div class="product-thumb">
+                            <a href="single_product/{{book.id}}">
+                              <img src="media/{{book.photo}}" width="420" height="320" alt="Image-HasTech">
+                            </a>
+                          </div>
+                          <div class="product-info">
+                            <h4 class="title"><a href="single_product/{{book.id}}">{{book.name}}</a></h4>
+                            <div class="prices">
+                              <span class="price">{{book.price }} Грн.</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!--== End prPduct Item ==-->
+                      </div>
+                      {%endfor%}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Product Area Wrapper ==-->
+  </main>
+
+
+   {%include 'footer.html'%}
+</div>
+<!--=======================Javascript============================-->
+{% include 'include_script.html'%}
+</body>
+
+</html>

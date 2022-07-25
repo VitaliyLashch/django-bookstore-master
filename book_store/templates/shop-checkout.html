@@ -1,0 +1,126 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+
+{%include 'head.html'%}
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <div class="dog-head"></div>
+      <div class="dog-body"></div>
+    </div>
+  </div>
+  <!--== End Preloader Content ==-->
+
+  <!--== Start Header Wrapper ==-->
+{%include 'header_area.html'%}  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+{% include 'page_header_area.html' %}    <!--== End Page Header Area Wrapper ==-->
+
+    <!--== Start Shopping Checkout Area Wrapper ==-->
+    <section class="shopping-checkout-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="checkout-page-coupon-wrap">
+              <!--== Start Checkout Coupon Accordion ==-->
+              <div class="coupon-accordion" id="CouponAccordion">
+                <div class="card">
+                  <h3>
+                    <i class="fa fa-info-circle"></i>
+                    Have a Coupon?
+                    <a href="#/" data-bs-toggle="collapse" data-bs-target="#couponaccordion">Click here to enter your code</a>
+                  </h3>
+
+                </div>
+              </div>
+              <!--== End Checkout Coupon Accordion ==-->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <!--== Start Billing Accordion ==-->
+            <div class="checkout-billing-details-wrap">
+              <h2 class="title">Замовлення</h2>
+              <div class="billing-form-wrap">
+                <label>Клієнт нік: {{request.user.username}}</label>
+                <label>Пошта: {{request.user.email}}</label>
+                  <tr class="order-total">
+                      <th>До оплати</th>
+                      <td>{{total}}</td>
+                    </tr>
+                <form action="/by" method="post">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="address">Address <abbr class="required" title="required">*</abbr></label>
+                        <input id="address" name="address" type="text"  class="form-control">
+                      </div>
+                      <button class="btn-place-order" type="submit">Замовити</button>
+
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="phone">Phone <abbr class="required" title="required">*</abbr></label>
+                        <input id="phone" name="phone" type="text"  class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--== End Billing Accordion ==-->
+          </div>
+          <div class="col-lg-6">
+            <!--== Start Order Details Accordion ==-->
+            <div class="checkout-order-details-wrap">
+              <div class="order-details-table-wrap table-responsive">
+                {% for book in Cart %}
+                <h2 class="title mb-25">{{book.name}}</h2>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="product-name">Продукт</th>
+                      <th class="product-total">{{book.name}}</th>
+                    </tr>
+                  </thead>
+                  <tfoot class="table-foot">
+                    <tr class="cart-subtotal">
+                      <th>Ціна</th>
+                      <td>{{book.price}} Грн.</td>
+                    </tr>
+                  </tfoot>
+                </table>
+                {% endfor %}
+            <!--== End Order Details Accordion ==-->
+                <div class="row my-5" id="review-form" style="display:none">
+
+
+</div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Shopping Checkout Area Wrapper ==-->
+  </main>
+
+    {%include 'footer.html'%}
+</div>
+<!--=======================Javascript============================-->
+{% include 'include_script.html'%}
+
+</body>
+
+</html>

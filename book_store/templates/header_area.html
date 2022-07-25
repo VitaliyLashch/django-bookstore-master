@@ -1,0 +1,67 @@
+{% load static %}
+<!--wrapper start-->
+<div class="wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <div class="dog-head"></div>
+      <div class="dog-body"></div>
+    </div>
+  </div>
+<header class="header-area transparent">
+    <div class="container">
+      <div class="row no-gutter align-items-center position-relative">
+        <div class="col-12">
+          <div class="header-align">
+            <div class="header-align-start">
+              <div class="header-logo-area">
+                <a href="/">
+                  <img class="logo-main" src="{% static 'assets/img/logo-light.webp' %}" width="158" height="36" alt="Logo" />
+                </a>
+              </div>
+            </div>
+            <div class="header-align-center">
+              <div class="header-navigation-area position-relative">
+                <ul class="main-menu nav">
+                  <li class="has-submenu"><a href="/"><span>Головна</span></a></li>
+                  <li><a href="/about_us"><span>Про нас</span></a></li>
+                  <li class="has-submenu position-static"><a href="/shop"><span>Магазин</span></a></li>
+                  <li class="has-submenu"><a href="/account"><span>Сторінки</span></a>
+                    <ul class="submenu-nav">
+                      <li><a href="/account"><span>Акаунт</span></a></li>
+                      <li><a href="/account-login"><span>Вхід</span></a></li>
+                      <li><a href="/account-register"><span>Реєстрація</span></a></li>
+                      {% if request.user.is_superuser %}
+                  <li class="has-submenu"><a href="/admin"><span>Адмін панель</span></a> </li>
+                  {% endif %}
+                    </ul>
+                  </li>
+                  <li><a href="contact"><span>Контакти</span></a></li>
+
+                </ul>
+              </div>
+            </div>
+            <div class="header-align-end">
+              <div class="header-action-area">
+                <div class="shopping-account">
+                  <a class="shopping-account-btn" href="account-login">
+                    <i class="pe-7s-users icon"></i>
+                  </a>
+                </div>
+                {%if user.is_authenticated %}
+                <div class="shopping-cart">
+                  <button class="shopping-cart-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasCart" aria-controls="AsideOffcanvasCart">
+                    <a class="shopping-account-btn" >
+                    <i class="pe-7s-shopbag icon"></i>
+ </a>
+                  </div>
+
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

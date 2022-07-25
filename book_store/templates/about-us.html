@@ -1,0 +1,315 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+
+{%include 'head.html'%}
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <div class="dog-head"></div>
+      <div class="dog-body"></div>
+    </div>
+  </div>
+  <!--== End Preloader Content ==-->
+
+  <!--== Start Header Wrapper ==-->
+  {%include 'header_area.html'%}
+  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+    {% include 'page_header_area.html' %}
+    <!--== End Page Header Area Wrapper ==-->
+
+    <!--== Start About Area Wrapper ==-->
+    <section class="about-area about-inner-area bg-color-f6">
+      <div class="container">
+        <div class="about-item about-item-style2 position-relative">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="about-thumb text-center">
+                <img src="{% static 'assets/img/about/2.webp'%}" width="529" height="429" alt="Image-HasTech">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="about-content">
+                <div class="section-title shape-left">
+                  <h5 class="sub-title">Кращі продукти</h5>
+                  <h2 class="title">Книжка року</h2>
+                </div>
+                <p>Ця книжка завоювала вже інтереси мільйонів читачів. Справжній бум продажу почався одразу після релізу цієї книжки</p>
+                <p class="text-color-theme"></p>
+                <a class="btn-theme" href="/single_product/3">Переглянути</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End About Area Wrapper ==-->
+
+    <!--== Start Team Area Wrapper ==-->
+    <section class="team-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title shape-center text-center">
+              <h5 class="sub-title"></h5>
+              <h2 class="title">Наша команда</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-lg-3">
+            <!--== Start Team Item ==-->
+            <div class="team-item">
+              <div class="thumb">
+                <img src="{% static 'assets/img/team/1.webp'%}" width="270" height="300" alt="Image-HasTech">
+                <div class="member-icons">
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                  <a href="https://dribbble.com/" target="_blank" rel="noopener"><i class="fa fa-dribbble"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
+                  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                </div>
+              </div>
+              <div class="content">
+                <h4 class="title">Костенко Олександр</h4>
+                <p>Адміністратор</p>
+              </div>
+            </div>
+            <!--== End Team Item ==-->
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <!--== Start Team Item ==-->
+            <div class="team-item">
+              <div class="thumb">
+                <img src="{% static 'assets/img/team/2.webp'%}" width="270" height="300" alt="Image-HasTech">
+                <div class="member-icons">
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                  <a href="https://dribbble.com/" target="_blank" rel="noopener"><i class="fa fa-dribbble"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
+                  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                </div>
+              </div>
+              <div class="content">
+                <h4 class="title">Лазаренко Іван</h4>
+                <p>Консультант</p>
+              </div>
+            </div>
+            <!--== End Team Item ==-->
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <!--== Start Team Item ==-->
+            <div class="team-item">
+              <div class="thumb">
+                <img src="{% static 'assets/img/team/3.webp'%}" width="270" height="300" alt="Image-HasTech">
+                <div class="member-icons">
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                  <a href="https://dribbble.com/" target="_blank" rel="noopener"><i class="fa fa-dribbble"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
+                  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                </div>
+              </div>
+              <div class="content">
+                <h4 class="title">Кибилянська Ольга</h4>
+                <p>Заступник директора</p>
+              </div>
+            </div>
+            <!--== End Team Item ==-->
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <!--== Start Team Item ==-->
+            <div class="team-item">
+              <div class="thumb">
+                <img src="{% static 'assets/img/team/4.webp'%}" width="270" height="300" alt="Image-HasTech">
+                <div class="member-icons">
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                  <a href="https://dribbble.com/" target="_blank" rel="noopener"><i class="fa fa-dribbble"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="fa fa-pinterest-p"></i></a>
+                  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                </div>
+              </div>
+              <div class="content">
+                <h4 class="title">Гаврилюк Анастасія</h4>
+                <p>Головний редактор</p>
+              </div>
+            </div>
+            <!--== End Team Item ==-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Team Area Wrapper ==-->
+
+    <!--== Start Testimonial Area Wrapper ==-->
+    <section class="testimonial-area bg-color-f2 position-relative z-index-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title shape-center text-center">
+              <h5 class="sub-title">Відгуки</h5>
+              <h2 class="title">Деякі з них</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <!--== Start Testimonial Item ==-->
+            <div class="testimonial-item">
+              <div class="testi-inner-content">
+                <div class="testi-author">
+                  <div class="testi-thumb">
+                    <img src="{% static 'assets/img/testimonial/1.webp'%}" width="90" height="90" alt="Image-HasTech">
+                  </div>
+                  <div class="testi-info">
+                    <h4 class="title">Вакулюк Олексій</h4>
+                    <p class="sub-title">Клієнт</p>
+                    <div class="rating-box">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="testi-content">Сервіс хороший, замовлення отримав наступного ж дня після його ж оформлення </p>
+                  <div class="testi-quote"><img src="{% static 'assets/img/icons/quote1.webp'%}" width="55" height="38" alt="Image-HasTech"></div>
+                </div>
+              </div>
+            </div>
+            <!--== End Testimonial Item ==-->
+          </div>
+          <div class="col-lg-4">
+            <!--== Start Testimonial Item ==-->
+            <div class="testimonial-item">
+              <div class="testi-inner-content">
+                <div class="testi-author">
+                  <div class="testi-thumb">
+                    <img src="{% static 'assets/img/testimonial/2.webp'%}" width="90" height="90" alt="Image-HasTech">
+                  </div>
+                  <div class="testi-info">
+                    <h4 class="title">Данилко Петро</h4>
+                    <p class="sub-title">Клієнт</p>
+                    <div class="rating-box">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="testi-content">
+                  <p class="desc">Не спостерігав яка ситуація з цінами у інших магазинів, але цей на мій погляд є найдешевшим</p>
+                  <div class="testi-quote"><img src="{% static 'assets/img/icons/quote1.webp'%}" width="55" height="38" alt="Image-HasTech"></div>
+                </div>
+              </div>
+            </div>
+            <!--== End Testimonial Item ==-->
+          </div>
+          <div class="col-lg-4">
+            <!--== Start Testimonial Item ==-->
+            <div class="testimonial-item">
+              <div class="testi-inner-content">
+                <div class="testi-author">
+                  <div class="testi-thumb">
+                    <img src="{% static 'assets/img/testimonial/3.webp'%}" width="90" height="90" alt="Image-HasTech">
+                  </div>
+                  <div class="testi-info">
+                    <h4 class="title">Микитюк Евгеній</h4>
+                    <p class="sub-title">Клієнт</p>
+                    <div class="rating-box">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="testi-content">
+                  <p class="desc">Обслуговування неймовірне, роблю замовлення вже протягом багатьох років, всім рекомендую, кращий сервіс тільки на цьому сайті</p>
+                  <div class="testi-quote"><img src="{% static 'assets/img/icons/quote1.webp'%}" width="55" height="38" alt="Image-HasTech"></div>
+                </div>
+              </div>
+            </div>
+            <!--== End Testimonial Item ==-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Testimonial Area Wrapper ==-->
+
+    <!--== Start Product Banner Area Wrapper ==-->
+
+    </section>
+    <!--== End Product Banner Area Wrapper ==-->
+
+    <!--== Start Feature Area Wrapper ==-->
+    <div class="feature-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="feature-icon-box">
+              <div class="icon-box">
+                <img class="icon-img" src="{% static 'assets/img/icons/f1.webp'%}" width="46" height="34" alt="Icon-HasTech">
+              </div>
+              <div class="content">
+                <h5 class="title">Безкоштовна доставка</h5>
+                <p>Від суми 500</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="feature-icon-box">
+              <div class="icon-box">
+                <img class="icon-img" src="{% static 'assets/img/icons/f2.webp'%}" width="43" height="34" alt="Icon-HasTech">
+              </div>
+              <div class="content">
+                <h5 class="title">Оплата карткою</h5>
+                <p>Можлива розтрочка на 12 місяців</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="feature-icon-box">
+              <div class="icon-box">
+                <img class="icon-img" src="{% static 'assets/img/icons/f3.webp'%}" width="39" height="39" alt="Icon-HasTech">
+              </div>
+              <div class="content">
+                <h5 class="title">Можливе повернення товару</h5>
+                <p>Купуйте впевнено</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="feature-icon-box">
+              <div class="icon-box">
+                <img class="icon-img" src="{% static 'assets/img/icons/f4.webp'%}" width="36" height="39" alt="Icon-HasTech">
+              </div>
+              <div class="content">
+                <h5 class="title">На зв'язку 24/7</h5>
+                <p>Відповімо у будь який час доби</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Feature Area Wrapper ==-->
+  </main>
+
+  {%include 'footer.html'%}
+</div>
+{% include 'include_script.html'%}
+
+</body>
+
+</html>
